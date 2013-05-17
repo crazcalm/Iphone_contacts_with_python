@@ -1,0 +1,32 @@
+import csv   #Pythons CVS modulo
+
+info_list = []
+
+with open('icloud_contacts.csv', 'rb') as f:   #Opens said cvs file
+    reader = csv.reader(f)                     #Saves File to variable reader
+    for row in reader:                         #Reads the reader row by row.
+        
+        """
+        The first row has the titles of all the categories. We will find the index of the titles
+        that we want and save them. We will also need a dummy if statement that is only true for 
+        the first row. 
+        """
+        
+        if row[0].lower() == "title":         #Dummy if statement
+            
+            name1  =      row.index("First Name")       #These are the indexes of the info that I want
+            name2  =      row.index("Last Name")
+            phone1 =      row.index("Mobile Phone")
+            phone2 =      row.index("Other Phone")
+            
+            
+        else:
+            #This is a two Dimentional list of the gathered information
+            info_list.append([row[name1], row[name2], row[phone1], row[phone2]])
+            
+
+info_list.sort()     #Sorts the list in alphabetical order
+
+for x in info_list:   #prints out each person's info on a new line
+    print x
+        

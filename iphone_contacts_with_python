@@ -1,3 +1,7 @@
+"""
+Coded by Marcus Willock :)
+"""
+
 import csv   #Pythons CVS modulo
 
 info_list = []
